@@ -1,0 +1,19 @@
+server:
+    port: 8081
+    session:
+      timeout: 30
+    context-path: /client/
+
+logging:
+    level:
+        root: debug
+        com.xxx.template: debug
+spring:
+    mvc:
+        view:
+            prefix: /templates/
+            suffix: .ftl
+    freemarker:
+        cache: false
+        request-context-attribute: request
+

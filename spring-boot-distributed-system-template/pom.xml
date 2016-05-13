@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xxx.template</groupId>
+    <artifactId>spring-boot-distributed-system-template</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <spring-boot-version>1.3.4.RELEASE</spring-boot-version>
+        <spring-boot-mybatis>1.1.1</spring-boot-mybatis>
+        <spring-boot-maven-plugin-version>1.3.4.RELEASE</spring-boot-maven-plugin-version>
+        <mysql-connector-java-version>5.1.30</mysql-connector-java-version>
+        <junit-verion>4.10</junit-verion>
+        <com-alibaba-druid-verion>1.0.19</com-alibaba-druid-verion>
+        <pagehelper-version>4.1.1</pagehelper-version>
+        <spring-version>4.2.4.RELEASE</spring-version>
+        <dubbo-version>2.5.3</dubbo-version>
+        <zookeeper-version>3.4.6</zookeeper-version>
+        <zkclient-version>0.1</zkclient-version>
+        <com-alibaba-fastjson-version>1.2.11</com-alibaba-fastjson-version>
+        <commons-lang3-version>3.4</commons-lang3-version>
+
+        <!--<servlet-version>2.5</servlet-version>
+        <tomcat-embed-core-version>8.0.30</tomcat-embed-core-version>
+        <mybatis-generator-maven-plugin-version>1.3.2</mybatis-generator-maven-plugin-version>
+        <mybatis-version>3.2.6</mybatis-version>
+        <mybatis-spring>1.2.2</mybatis-spring>
+        <dbcp-version>1.2.2</dbcp-version>
+        <rabbitmq-version>3.6.1</rabbitmq-version>
+        <httpclient-version>4.5.1</httpclient-version>
+        <jackson-databind-version>2.7.3</jackson-databind-version>
+        <jackson-core-version>2.7.3</jackson-core-version>
+        <jackson-annotations-version>2.7.3</jackson-annotations-version>
+        <spring-session-version>1.1.1.RELEASE</spring-session-version>
+        <spring-boot-log4j>1.3.5.RELEASE</spring-boot-log4j>-->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-freemarker</artifactId>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring-boot-mybatis}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${com-alibaba-druid-verion}</version>
+            </dependency>
+
+
+            <!--分页插件-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>spring</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.sgroschupf</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com-alibaba-fastjson-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3-version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot-maven-plugin-version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>1.8</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-verion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring-version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>spring-boot-distributed-system-api</module>
+        <module>spring-boot-distributed-system-client</module>
+        <module>spring-boot-distributed-system-server</module>
+    </modules>
+</project>
