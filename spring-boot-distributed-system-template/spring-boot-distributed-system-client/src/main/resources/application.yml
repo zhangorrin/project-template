@@ -1,7 +1,10 @@
 server:
-    port: 8081
+    port: 8080
     session:
       timeout: 30
+    tomcat:
+      accesslog:
+        enabled: true
     context-path: /client/
 
 logging:
@@ -11,9 +14,5 @@ logging:
 spring:
     mvc:
         view:
-            prefix: /templates/
-            suffix: .ftl
-    freemarker:
-        cache: false
-        request-context-attribute: request
-
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp

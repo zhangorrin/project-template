@@ -2,8 +2,8 @@ package com.xxx.template;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,9 +13,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @version: V1.0.0
  * @Description:
  **/
-@EnableWebMvc
 @SpringBootApplication
-public class ClientApplication extends WebMvcConfigurerAdapter {
+public class ClientApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(ClientApplication.class);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClientApplication.class, args);

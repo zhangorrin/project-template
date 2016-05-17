@@ -24,9 +24,12 @@
 
 package com.xxx.template.conf;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,11 +40,26 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @Description:
  **/
 @Configuration
+@EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
-    @Override
+    /*@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/static*//**//**").addResourceLocations("classpath:/static/");
+        super.addResourceHandlers(registry);
+    }*/
+
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+
+    @Bean
+    InternalResourceViewResolver internalResourceViewResolver () {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/jsp/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
     }
 
 //    @Override
