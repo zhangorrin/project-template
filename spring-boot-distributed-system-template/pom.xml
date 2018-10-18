@@ -19,7 +19,7 @@
         <junit-verion>4.10</junit-verion>
         <com-alibaba-druid-verion>1.0.19</com-alibaba-druid-verion>
         <pagehelper-version>4.1.1</pagehelper-version>
-        <spring-version>4.2.4.RELEASE</spring-version>
+        <spring-version>4.3.20.RELEASE</spring-version>
         <dubbo-version>2.5.3</dubbo-version>
         <zookeeper-version>3.4.6</zookeeper-version>
         <zkclient-version>0.1</zkclient-version>
