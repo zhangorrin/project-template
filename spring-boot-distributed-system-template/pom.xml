@@ -30,7 +30,7 @@
         <org.aspectj.aspectjweaver>1.8.1</org.aspectj.aspectjweaver>
 
         <codehaus.jackson>1.9.11</codehaus.jackson>
-        <fasterxml.jackson>2.6.3</fasterxml.jackson>
+        <fasterxml.jackson>2.9.7</fasterxml.jackson>
         <log4j>1.2.17</log4j>
         <commons-fileupload>1.2.1</commons-fileupload>
         <commons-codec>1.10</commons-codec>
